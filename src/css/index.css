@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.App {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Header h1 {
+  font-size: 25px;
+  padding: 1rem;
+  white-space: nowrap;
+}
+
+.Nav {
+  list-style-type: none;
+  width: 100%;
+  text-align: right;
+}
+
+.Nav li {
+  padding: 1rem;
+  display: inline;
+}
+
+.Nav li a {
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.active {
+  color: white;
+}
+
+.About, .Portfolio, .Contact, .Resume, .Missing, .Footer {
+  display: flex;
+}
+
+.About, .Contact, .Resume, .Missing, .Portfolio {
+  background-color: #f2f2f2;
+  padding: 25px;
+  height: 100vh;
+}
+
+.ContactForm {
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+fieldset {
+  border: 3px solid #66d8f7;
+  border-radius: 10px;
+  padding: 25px;
+  background-color: white;
+}
+
+fieldset legend {
+  background-color: #FAF9F6;
+  padding: 1px 10px ;
+  font-size: 25px;
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px #66d8f7;
+  margin-left: 20px;
+}
+
+input[type=text], textarea {
+  width: 100%; 
+  padding: 12px;
+  border: 2px solid #66d8f7; 
+  border-radius: 4px; 
+  box-sizing: border-box;
+  background-color: #FAF9F6;
+  font-size: 20px;
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical 
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  background-color: #66d8f7;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #05c4f7;
+  transform: scale(1.3); 
+}
+
+.ErrorMsg {
+  color: red;
+}
+
+.SuccessMsg {
+  color: green;
+}
+
+.ProfilePic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+
+.ProfilePic:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+.About {
+  flex-direction: column;
+  align-items: center;
+}
+
+.AboutMeTitle {
+  margin-bottom: 20px;
+}
+
+.Resume {
+  flex-direction: column;
+  align-items: center;
+}
+
+.FieldSet {
+  border: 3px solid #66d8f5;
+  margin-top: 1em;
+  width: 500px;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.FieldSet h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.FieldSet h2 span {
+  display: inline;
+  border: 3px solid #66d8f5;
+  border-radius: 5px;
+  background: #FAF9F6;
+  padding: 5px 10px;
+  position: relative;
+  top: -2.1em;
+}
+
+.Download {
+  height: 55px;
+  width: 200px;
+  margin-top: 5px;
+}
+
+.Download:hover {
+  transform: scale(1.1); 
+}
+
+.Portfolio {
+  padding: 20px;
+}
+
+.gallery {
+  --n: 1; /* number of rows*/
+  --m: 6; /* number of columns */
+  --h: calc((100vh - (var(--n) - 1)*var(--g))/var(--n));
+  --w: calc((100vw - (var(--m) - 1)*var(--g))/var(--m)); 
+  --g: 10px;  /* control the gap */
+  --f: 3.2;   /* control the scale factor */
+  
+  display: grid;
+  gap: var(--g);
+  width: 100vw;
+  height: 72vh;
+  grid-template-columns: repeat(var(--m),auto);
+}
+
+.gallery > figure > a > img {
+  width: 0;
+  height: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: grayscale(80%);
+  transition: .35s linear;
+}
+
+.gallery img:hover{
+  filter: grayscale(0);
+  width:  calc(var(--w)*var(--f));
+}
+
+.Footer, .Container {
+  width: 100%;
+  background-color: #66d8f5;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.Footer {
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+}
+
+.Footer > a {
+  color: black;
+}
